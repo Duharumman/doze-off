@@ -1,12 +1,12 @@
 FROM python:3.11.3-alpine3.18
 
-ENV PYTHONUNBFFRED 1 
+ENV PYTHONUNBUFFERED 1 
 
 COPY ./requirements.txt /tmp/requirements.txt 
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./app /app
 WORKDIR /app
-EXPOSE 2525
+EXPOSE 8000
 
 ARG DEV=false
 RUN python -m venv /py && \
